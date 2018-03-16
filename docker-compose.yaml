@@ -1,0 +1,17 @@
+version: "3"
+services:
+  registry-cache:
+    image: registry:2
+    ports:
+      - 5000:5000
+    volumes:
+      - ./registry_cache:/var/lib/registry
+    environment:
+      - REGISTRY_PROXY_REMOTEURL=https://registry-1.docker.io
+  squid-cache:
+    image: pigmej/caching-proxy
+    ports:
+      - 3128:3128
+    volumes:
+      - ./squid.conf:/etc/squid/squid.conf
+      - ./squid_cache:/var/cache/squid

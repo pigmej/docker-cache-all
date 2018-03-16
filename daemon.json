@@ -1,0 +1,4 @@
+{
+    "insecure-registries": ["0.0.0.0/0"],
+    "registry-mirrors": ["http://{YOUR_HOST_IP}:5000"]
+}
